@@ -1,2 +1,7 @@
-# CF-1006-Div.-3-
-Solution of CODEFORCES Round 1006 ( Div. 3) problems
+# CF-1006-Div.-3
+In the contest **CODEFORCES Round 1006(Div. 3)** on 25/02/2025 in the CODEFORCES platform, I managed to solve 2 problems during live contest and another 1 later on the day 26/02/2025.
+Here I share solutions to the problems.
+
+Problem A :: New World, New Me, New Array
+Problem B :: Having Been a Treasurer in the Past, I Help Goblins Deceive
+Problem C :: Creating Keys for StORages Has Become My Main Skill
