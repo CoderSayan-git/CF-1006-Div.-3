@@ -1,0 +1,111 @@
+/*
+                Hello !!! 
+                
+            This is SAYAN DHARA
+
+        Hope you like the solution   :)  :)
+*/
+
+#include<bits/stdc++.h>
+#define fio                           \
+    ios_base::sync_with_stdio(false); \
+    cin.tie(NULL);                    \
+    cout.tie(NULL)
+
+using namespace std;
+
+#define int long long
+#define ll long long
+#define FOR(i, start, end) for(int i = start; i < end; i++)
+#define _FOR(i, start, end) for(int i = start; i >= end; i--)
+#define vi vector<int>
+#define pb(a) push_back(a)
+#define all(x) (x).begin(), (x).end()
+#define yes cout<<"YES"<<endl
+#define no cout<<"NO"<<endl
+const int mod = 1e9+7;
+
+ll gcd(ll a, ll b) { return (b == 0) ? (a) : (gcd(b, a %= b)); }
+ll lcm(ll a, ll b) { return (a * b) / gcd(a, b); }
+
+void solve()
+{   
+    int n,x;
+    cin >> n >> x;
+    vi a;
+    vi bit(31,0);
+    FOR(i,0,31){
+        int b = (x>>i)&1;
+        if(b){
+            bit[i] = 1;
+        }
+    }
+    vi vis(31,0);
+    int cnt = 0;
+    for(int i=0; i<=x && cnt<n; i++){
+        int e = i;
+        bool flag = true;
+        FOR(j,0,31){
+            int b = (e>>j)&1;
+            if(b && bit[j]==0){
+                flag = false;
+            }
+        }
+        if(flag){
+            FOR(j,0,31){
+                int b = (e>>j)&1;
+                if(b){
+                    vis[j] = 1;
+                }
+            }
+        }
+        if(flag){
+	        a.pb(i);
+            cnt++;
+	    } else {
+            	break;
+        }
+    }
+    for(int i=0;i<31;i++){
+        if(bit[i]==1 && vis[i]!=1){
+            if(cnt<n){
+                a.pb(x);
+                cnt++;
+            }
+            else{
+                a.pop_back();
+                a.pb(x);
+            }
+        }
+    }
+    while(cnt<n){
+        a.pb(x);
+        cnt++;
+    }
+ 
+    for(auto it: a){
+        cout << it << " ";
+    }
+    cout << endl;
+    
+ 
+}
+    
+signed main (){
+
+    fio;                                                         
+    #ifndef ONLINE_JUDGE
+    freopen("input.txt", "r",stdin);
+    freopen("output.txt", "w",stdout);
+    #endif  
+        
+
+    int t;
+    cin>>t; 
+        
+    while(t--){
+            solve();
+        }
+        
+        return 0;
+    }
